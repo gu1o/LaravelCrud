@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ArmiesInvolvedController;
+use App\Http\Controllers\ConflictController;
+use App\Http\Controllers\ConflictSideController;
+use App\Http\Controllers\ReportConflictController;
+use App\Http\Controllers\SideController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,6 +12,8 @@ Route::get('/', function () {
 })-> name('home');
 
 
-Route::resource('products', ProductController::class);
-
-Route::resource('categories', CategoryController::class);
+Route::resource('armies-involved', ArmiesInvolvedController::class);
+Route::resource('conflicts', ConflictController::class);
+Route::resource('conflicts-side', ConflictSideController::class);
+Route::resource('report-conflicts', ReportConflictController::class);
+Route::resource('sides', SideController::class);

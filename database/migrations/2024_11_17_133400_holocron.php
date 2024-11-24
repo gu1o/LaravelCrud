@@ -10,7 +10,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::statement('CREATE DATABASE IF NOT EXISTS laravelCrud');
+        DB::statement('CREATE DATABASE IF NOT EXISTS holocron');
     }
 
     /**
@@ -18,6 +18,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::statement('DROP DATABASE IF EXISTS laravelCrud');
+
     }
 };

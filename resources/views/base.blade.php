@@ -8,7 +8,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Laravel Crud - Guio')</title>
+
+    @yield('style')
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -16,8 +19,8 @@
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="{{ route('home') }}" title="Home page" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ asset('images/icons/laravel.svg') }}" class="h-8" alt="Laravel Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Project Guio</span>
+                <img src="{{ asset('images/Holocron.png') }}" class="h-8" alt="Laravel Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Holocrons SW</span>
             </a>
 
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
@@ -29,12 +32,24 @@
                             aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('products.index') }}" title="Products pages"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Products</a>
+                        <a href="{{ route('armies-involved.index') }}" title="Armies pages"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Armies Involved</a>
                     </li>
                     <li>
-                        <a href="{{ route('categories.index') }}" title="Categories page"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Categories</a>
+                        <a href="{{ route('conflicts.index') }}" title="Conflicts page"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Conflicts</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('conflicts-side.index') }}" title="Conflicts Sides page"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Conflicts Sides</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('report-conflicts.index') }}" title="Reports Conflicts page"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reports Conflicts</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('sides.index') }}" title="Sides page"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sides</a>
                     </li>
                 </ul>
             </div>
@@ -83,19 +98,28 @@
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                    <img src="{{ asset('images/icons/laravel.svg') }}" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Project Guio</span>
+                    <img src="{{ asset('images/Holocron.png') }}" class="h-8" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Holocrons SW</span>
                 </a>
                 <ul
                     class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Armies Involved</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Conflicts</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Conflicts Sides</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Reports Conflicts</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Sides</a>
+                    </li>
+                    <li>
                         <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
                     </li>
                     <li>
                         <a href="#" class="hover:underline">Contact</a>
@@ -103,7 +127,7 @@
                 </ul>
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Project Guio™</a>. All Rights Reserved.</span>
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Holocrons SW™</a>. All Rights Reserved.</span>
         </div>
     </footer>
 
@@ -127,6 +151,8 @@
             });
         });
     </script>
+
+    @yield('js')
 
 </body>
 

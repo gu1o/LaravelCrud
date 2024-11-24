@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Side;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class SideController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::all();
-        return view('products.index', ['products' => $products]);
+        $sides = Side::all();
+        return view('sides.index', ['sides' => $sides]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Side $side)
     {
         //
     }
@@ -43,7 +43,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Side $side)
     {
         //
     }
@@ -51,7 +51,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Side $side)
     {
         //
     }
@@ -59,7 +59,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(Side $side)
     {
         //
     }
